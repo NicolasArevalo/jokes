@@ -1,0 +1,109 @@
+/* VARS */
+
+$negro: rgb(2, 0, 46);
+$blanco: #fff;
+
+/* __________ */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+  color: $negro;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+span{
+  color:rgb(96, 96, 96);
+  font-size: small;
+  font-style: italic;
+  align-self: flex-end;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fafafa;
+  border-bottom: 1px solid #eaeaea;
+  ul{
+    display: flex;
+    li{
+      margin-right: 1rem;
+      a{
+        color: #333;
+        transition: all .2s;
+        &:hover{
+          color: rgb(96, 96, 96);
+        }
+      }
+    }
+  }
+}
+
+.container{
+  padding: 1rem;
+  width: 100%;
+  margin: 1em auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  &-form{
+    
+    width: min(100%, 500px);
+    form{
+      display: flex;
+      flex-direction: column;
+      width: minmax(300px, 1000px);
+      label{
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      input{
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #eaeaea;
+        border-radius: 3px;
+        &:focus{
+          outline: none;
+          border-color: $negro;
+        }
+      }
+      button{
+        margin: 1rem;
+        padding: 0.7rem 1rem;
+        border: none;
+        border-radius: 3px;
+        background-color: rgb(185, 12, 141);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover{
+          background-color: $negro;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .container{
+    width: 80%;
+  }
+}
+  
