@@ -26,7 +26,15 @@ form.addEventListener('submit', async (e) => {
 
   const res = await fetch(`${INSULT_URL}?name=${name}&reason=${reason}&${API_KEY}`)
   const insult = await res.json()
-
-  show.innerHTML = insult.text
+  console.log(insult)
+  if(insult?.code){
+    if(insult.code === 402){
+      show.innerHTML = `Error ${insult.code}: the f*cking API said that we can't ask more insults today. Try tomorrow 😿 `
+    }else{
+      show.innerHTML = `Error ${insult.code}: ${insult.message} `
+    } 
+  } else{
+    show.innerHTML = insult.text
+  }
 
 })
